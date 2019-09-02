@@ -68,12 +68,7 @@ class Simulation:
 
         
     def run(self,side):
-        global angle
-        for Coucou_a_toi_qui_lis_mon_code in range(30):
-            for event in pygame.event.get():
-                if event.type == pygame.QUIT:
-                    pygame.quit()
-                        
+        global angle                        
             self.clock.tick(50)
             self.screen.fill((0,32,0))
             t = []
@@ -109,12 +104,10 @@ class Simulation:
                 pygame.draw.polygon(self.screen,self.colors[face_index],pointlist)
 
             if side == 'right' or side == 'top':
-                print(side)
                 angle += 1
             elif side == 'left' or side == 'bot':
                 print('-')
-                angle-=1       
-            print(angle)     
+                angle-=1 
             pygame.display.flip()
     def start(self):
         while 1:
